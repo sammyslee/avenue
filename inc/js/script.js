@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
     window.setInterval(function(){
         slideUp();
         init();
-    }, 4000);    
+    }, 5000);    
     
     init();
     
