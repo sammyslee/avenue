@@ -11,6 +11,7 @@ get_header();?>
 
 <div id="content" class="site-content row <?php echo of_get_option('sc_container_width'); ?>">
     <div class="col-md-12">
+        <div class="col-md-9">
         <?php while (have_posts()) : the_post(); ?>
             <?php
                 if('posts' == get_option('show_on_front')){
@@ -24,6 +25,10 @@ get_header();?>
             endif;
             ?>
         <?php endwhile; // end of the loop.  ?>
+        </div>
+        <div class="col-md-3">
+            <?php get_sidebar('homepage'); ?>
+        </div>
     </div>
 </div>
 <?php get_footer(); ?>

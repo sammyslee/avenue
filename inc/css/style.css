@@ -43,7 +43,10 @@ h3{ font-size: 22px;line-height: 26px;}
     -moz-transition: 0.4s all ease;
     -webkit-transition: 0.4s all ease;
 }
-
+/*-- Logo --*/
+#sc_logo{
+    max-height: 100px;
+}
 /*-- Toolbar --*/
 #site-toolbar{
     background: #222222;

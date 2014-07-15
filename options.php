@@ -41,6 +41,10 @@ function optionsframework_options() {
         'yes' => __('Yes', 'options_framework_theme'),
         'no' => __('No', 'options_framework_theme')
     );
+    $slider_style = array(
+        'cover' => __('Cover', 'options_framework_theme'),
+        '100% 100%' => __('Stretch', 'options_framework_theme'),
+    );
 
     // Multicheck Array
     $multicheck_array = array(
@@ -271,6 +275,15 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'type' => 'heading');
+    
+//$options[] = array(
+//	"name" => "Test",
+//	"id" => "example_text",
+//	"std" => "Default Value",
+//	"type" => "text",
+//        "theme_customizer" => true,
+//        "section" => "nav");
+        
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'desc' => __('Toggle the Slider on or off', 'options_framework_theme'),
@@ -278,6 +291,13 @@ function optionsframework_options() {
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
+    $options[] = array(
+        'name' => __('Slider Image Style', 'options_framework_theme'),
+        'desc' => __('How do you want the slider to show your images', 'options_framework_theme'),
+        'id' => 'sc_slider_style',
+        'std' => 'cover',
+        'type' => 'radio',
+        'options' => $slider_style);
     $options[] = array(
         'name' => __('Slide #1', 'options_framework_theme'),
         'desc' => __('First Slide', 'options_framework_theme'),

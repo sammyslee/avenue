@@ -37,8 +37,6 @@ get_header();
                             <a class="btn btn-default btn-primary" href="<?php the_permalink(); ?>">Read More</a>
                         </div>                        
                     </div>
-
-                    
                 </div>
             <?php endwhile; ?>
         <?php else : ?>

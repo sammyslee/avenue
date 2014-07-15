@@ -154,6 +154,8 @@ h2 .nav-tab:hover{
 }
 #optionsframework .controls input[type=text] {
 	width:100%;
+        background: #404040;
+        color: #C2C2C2;
 }
 #optionsframework .controls input[type=text].wp-color-picker {
     width: 65px;

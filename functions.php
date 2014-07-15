@@ -27,7 +27,7 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '1.0.7');
+        define('SC_AVENUE_VERSION', '1.0.8');
         /**
          * Set the content width based on the theme's design and stylesheet.
          */
@@ -76,8 +76,19 @@ add_action('after_setup_theme', 'avenue_setup');
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function avenue_widgets_init() {
+    
     register_sidebar(array(
-        'name' => __('Sidebar', 'avenue'),
+        'name' => __('Left Sidebar', 'avenue'),
+        'id' => 'sidebar-left',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h1 class="widget-title">',
+        'after_title' => '</h1>',
+    ));
+    
+    register_sidebar(array(
+        'name' => __('Right Sidebar', 'avenue'),
         'id' => 'sidebar-1',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -85,6 +96,27 @@ function avenue_widgets_init() {
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
     ));
+    
+    register_sidebar(array(
+        'name' => __('Homepage Sidebar', 'avenue'),
+        'id' => 'sidebar-homepage',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h1 class="widget-title">',
+        'after_title' => '</h1>',
+    ));
+    
+    register_sidebar(array(
+        'name' => __('Footer', 'avenue'),
+        'id' => 'sidebar-footer',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h1 class="widget-title">',
+        'after_title' => '</h1>',
+    ));
+
 }
 
 add_action('widgets_init', 'avenue_widgets_init');
@@ -186,6 +218,11 @@ function sc_avenue_css() {
         }
         .row{
             /*width: <?php echo of_get_option('sc_container_width'); ?>;*/
+        }
+        .sc-slider ul li{
+            background-size: <?php echo of_get_option('sc_slider_style'); ?>;
+            -webkit-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
+            -moz-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
         }
     </style>
 <?php

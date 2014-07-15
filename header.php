@@ -29,7 +29,7 @@
                                 <h1 class="site-title">
                                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                                         <?php if (of_get_option('sc_logo_image') != '') { ?>
-                                            <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt=""/>
+                                            <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt="" id="sc_logo"/>
                                         <?php }else{
                                             bloginfo('name');
                                             }
