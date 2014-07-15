@@ -39,13 +39,8 @@
                                 <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                             </div>
                             <div class="col-xs-6 search-bar">
-                                <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
-                                    <label>
-                                        <span class="screen-reader-text">Search for:</span>
-                                        <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
-                                    </label>
-                                    <!--<input type="submit" class="search-submit" value="Search" />-->
-                                </form>
+                                <!-- header right -->
+                                <?php get_sidebar('header-right'); ?>
                             </div>
                         </div>
                     </div>

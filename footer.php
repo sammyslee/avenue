@@ -8,8 +8,17 @@
  */
 ?>
 <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="footer-boxes">
+        <div class="row <?php echo of_get_option('sc_container_width'); ?>">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <?php get_sidebar('footer'); ?>
+                </div>
+            </div>            
+        </div>        
+    </div>
     <div class="site-info">
-        <div class="row">
+        <div class="row <?php echo of_get_option('sc_container_width'); ?>">
             <div class="col-md-12">
                 <div class="col-xs-6 text-left">
                     <?php echo sc_footer(); ?>

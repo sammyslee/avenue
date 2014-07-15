@@ -78,6 +78,16 @@ add_action('after_setup_theme', 'avenue_setup');
 function avenue_widgets_init() {
     
     register_sidebar(array(
+        'name' => __('Header Right', 'avenue'),
+        'id' => 'sidebar-header-right',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="hidden">',
+        'after_title' => '</h2>',
+    ));    
+    
+    register_sidebar(array(
         'name' => __('Left Sidebar', 'avenue'),
         'id' => 'sidebar-left',
         'description' => '',
@@ -111,7 +121,7 @@ function avenue_widgets_init() {
         'name' => __('Footer', 'avenue'),
         'id' => 'sidebar-footer',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',

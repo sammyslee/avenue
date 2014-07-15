@@ -4,6 +4,8 @@
  */
 
 jQuery(document).ready(function($) {
+    
+        $('#setting-error-save_options').delay(1000).slideUp(500);
 
 	// Loads the color pickers
 	$('.of-color').wpColorPicker();

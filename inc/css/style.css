@@ -16,6 +16,8 @@ h1{ font-size: 30px;line-height: 34px;}
 h2{ font-size: 26px;line-height: 30px;}
 h3{ font-size: 22px;line-height: 26px;}
 
+.hidden{display: none;}
+
 .row{
     margin: 0 auto;
     overflow: hidden;
@@ -397,9 +399,17 @@ h3{ font-size: 22px;line-height: 26px;}
 
 /*-- Site Footer --*/
 .site-footer{
-    background: #222;
     border-top: 1px solid #2e2e2e;
     color: #e0e0e0;
+}
+.site-footer .site-info{
+    background: #222222;
+}
+.site-footer .footer-boxes{
+    background: #303030 url('../images/left-cross.png');
+}
+.site-footer .footer-boxes .widget:first-child{
+    padding-left: 0;
 }
 .site-footer .col-md-6{
     padding: 20px 10px 20px 0;
@@ -487,7 +497,7 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .widget-title{
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 400;
 }
 .widget-area ul{
     margin: 0;
@@ -622,7 +632,8 @@ h3{ font-size: 22px;line-height: 26px;}
         margin-top: 5px;
     }
     #site-toolbar{
-        bottom: 0;
+        /*bottom: 0;*/
+        display: none;
     }
     .site-branding{
         margin-top: 0;

@@ -202,7 +202,7 @@ function sc_toolbar() {
     if ('no' != of_get_option('sc_headerbar_bool', 'yes')) {
         ?>
         <div id="site-toolbar">
-            <div class="row">
+            <div class="row <?php echo of_get_option('sc_container_width'); ?>">
                 <div class="col-md-12">
                     <div class="col-xs-6 contact-bar">
                         <?php if ('' != of_get_option('sc_phone_url')) { ?>

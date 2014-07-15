@@ -3,7 +3,6 @@ Avenue Responsive WordPress Theme
 
 
 #Changelog
-
 * 1.0.5
 - Fix responsive issue with different width container
 - Fix text within homepage banner
@@ -12,6 +11,17 @@ Avenue Responsive WordPress Theme
 - Fix headerbar bool
 - Fix social icons & contact icons show/hide
 - Add Unslider instead of custom slider
+
+* 1.0.7
+- Fixed template 404 issue
+
+* 1.0.8
+- Added Left Sidebar widget
+- Changed Default Sidebar to Right Sidebar
+- Added Footer widget
+- Added Homepage Sidebar widget
+- Added option to change slider background style
+- Fix blog display on homepage
 
 
 - Avenue is created and designed by Bilal Hassan (http://smartcatdesign.net)
