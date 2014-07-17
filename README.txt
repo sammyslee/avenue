@@ -23,6 +23,10 @@ Avenue Responsive WordPress Theme
 - Added option to change slider background style
 - Fix blog display on homepage
 
+* 1.0.9
+- fix slider responsiveness
+- fix image distortion on resize
+
 
 - Avenue is created and designed by Bilal Hassan (http://smartcatdesign.net)
 
@@ -34,4 +38,6 @@ are licensed under GNU General Public License version 2, see file license.txt.
 * Font Awesome by Dave Gandy - http://fontawesome.io, License: SIL OFL 1.1, http://scripts.sil.org/OFL
 * Theme is built from the _s starter theme licensed under GPLv2(http://www.gnu.org/licenses/gpl-2.0.html#SEC1). _s github https://github.com/Automattic/_s
 * Options Framework Theme is licensed under GPLv2(http://www.gnu.org/licenses/gpl-2.0.html#SEC1) http://wptheming.com/options-framework-theme/
-* Unslider by @idiot is fully open source under GPLv2(http://www.gnu.org/licenses/gpl-2.0.html#SEC1) https://github.com/idiot/unslider http://unslider.com/ 
+* Unslider by @idiot is fully open source under GPLv2(http://www.gnu.org/licenses/gpl-2.0.html#SEC1) https://github.com/idiot/unslider http://unslider.com/
+* Camera slider by pixedelic is Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+* jQuery easing http://gsgd.co.uk/sandbox/jquery/easing/ is open source licensed under BSD  http://www.freebsd.org/copyright/freebsd-license.html

@@ -87,39 +87,36 @@ if (!function_exists('of_get_option')) :
 endif;
 
 function sc_slider() { ?>
-
     <div class="sc-slider-wrapper">
-        <div class="sc-slider">
-            <ul>
+	<div class="fluid_container">
+        <div class="camera_wrap" id="camera_wrap_1">
+
                 <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>');">
-                        <div class="inner">
-                            <h1><?php echo of_get_option('sc_slide1_text','Clean & Modern Design');?></h1>
-<!--                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
-                            <!--<a class="btn" href="#download">Download</a>-->
+                    <div data-thumb="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                        <div class="camera_caption fadeFromBottom">
+                            <?php echo of_get_option('sc_slide1_text','Clean & Modern Design');?>
                         </div>
-                    </li>
-                <?php } ?>
-
+                    </div>
+                <?php } ?>            
+            
                 <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>');">
-                        <div class="inner">
-                            <h1><?php echo of_get_option('sc_slide2_text','Reponsive with Bootstrap');?></h1>
+                      <div data-thumb="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                        <div class="camera_caption fadeFromBottom">
+                            <?php echo of_get_option('sc_slide2_text','Clean & Modern Design');?>
                         </div>
-                    </li>
-                <?php } ?>
-
-                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>');">
-                        <div class="inner">
-                            <h1><?php echo of_get_option('sc_slide3_text','Comes with 600 Icons');?></h1>
+                    </div>
+                <?php } ?>   
+            
+                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>     
+                    <div data-thumb="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                        <div class="camera_caption fadeFromBottom">
+                            <?php echo of_get_option('sc_slide3_text','Clean & Modern Design');?>
                         </div>
-                    </li>
-                <?php } ?>
-            </ul>
+                    </div>
+                <?php } ?>      
+        </div><!-- #camera_wrap_1 -->
         </div>
     </div>
-
     <?php
 }
 
@@ -261,6 +258,6 @@ function sc_toolbar() {
 function sc_footer() {
     echo of_get_option('sc_footer_text');?>
     <br>
-    <!-- Please make a donation so I can dedicate more time towards support and development of this free theme -->
+    <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
     <a href="http://smartcatdesign.net/" rel="designer">Design by SmartCat</a>
 <?php }

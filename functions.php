@@ -27,7 +27,7 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '1.0.8');
+        define('SC_AVENUE_VERSION', '1.0.9');
         /**
          * Set the content width based on the theme's design and stylesheet.
          */
@@ -141,7 +141,7 @@ function avenue_scripts() {
     wp_enqueue_style('avenue-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600)', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color','orange') . '.css', array(), SC_AVENUE_VERSION);
-
+    wp_enqueue_style('avenue-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), SC_AVENUE_VERSION);
 
 
     wp_enqueue_script('avenue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SC_AVENUE_VERSION, true);
@@ -149,7 +149,10 @@ function avenue_scripts() {
     wp_enqueue_script('avenue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SC_AVENUE_VERSION, true);
 
 
-    wp_enqueue_script('avenue-uslider', get_template_directory_uri() . '/inc/js/uslider.min.js', array(), SC_AVENUE_VERSION, true);
+//    wp_enqueue_script('avenue-uslider', get_template_directory_uri() . '/inc/js/uslider.min.js', array(), SC_AVENUE_VERSION, true);
+//    wp_enqueue_script('avenue-mobile', get_template_directory_uri() . '/inc/js/jquery.mobile.customized.min.js', array(), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-uslider', get_template_directory_uri() . '/inc/js/camera.js', array(), SC_AVENUE_VERSION, true);
 
     wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core'), SC_AVENUE_VERSION);
 

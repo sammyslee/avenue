@@ -708,22 +708,17 @@ function sc_avenue_options_display_sidebar() {
         </div>    
 
         <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/donate/" target="_blank">
-                Donate
-            </a>
-        </div>    
-
-        <div class="sc-tab-option">
             <a href="http://smartcatdesign.net/avenue/" target="_blank">
                 View Avenue Icons
             </a>
         </div>           
-        
+        <p>Donations are extremely important. It takes a lot of time to create, modify and support a theme. As well as answer all your questions.</p>
+        <p>Please make a donation so I can afford to keep this theme 100% free</p>
+        <div class="sc-tab-option">
+            <a href="http://smartcatdesign.net/donate/" target="_blank">
+                Donate
+            </a>
+        </div>  
         <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
-
-
     </div>
-
-
-
 <?php } ?>

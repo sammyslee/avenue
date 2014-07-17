@@ -187,6 +187,7 @@ h3{ font-size: 22px;line-height: 26px;}
 /*-- Slider --*/
 .sc-slider-wrapper{
     margin: 0 auto;
+    overflow: hidden;
 }
 .sc-slider {
     position: relative;

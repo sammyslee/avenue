@@ -4,23 +4,6 @@
  * 
  */
 jQuery(document).ready(function($) {
-    
-    $('.sc-slider h1').not('.sc-slider li:first-child h1').hide();
-    $('.sc-slider').unslider({
-        speed: 500,
-        delay: 4000,
-        complete: function() {
-            $('.sc-slider h1').fadeIn(500).delay(2500).fadeOut(500);
-        },
-        keys: true, 
-        dots: true,
-        fluid: true,
-    });
-    $('.sc-slider li').hover(function(){
-        $('h1',this).stop(true,false).fadeIn(300);
-    });
-    
-
     //--Match CTA Boxes height
     matchColHeights('.site-cta');
 
@@ -52,8 +35,6 @@ jQuery(document).ready(function($) {
         }).removeClass('sc-primary-color sc-primary-border');
     });
 
-
-
     //------------------- Match Height Function
     function matchColHeights(selector) {
         var maxHeight = 0;
@@ -65,8 +46,7 @@ jQuery(document).ready(function($) {
         });
         $(selector).height(maxHeight);
     }
-    ;
-
+    
     function resize_slider() {
         var w = $('#main-slider').width();
         $('#slider_container,#slider_container > div').width(w);
@@ -78,6 +58,15 @@ jQuery(document).ready(function($) {
     });
 
     $('.menu-toggle').html('<i class="fa fa-bars fa-lg"></i>');
+
+    jQuery('#camera_wrap_1').camera({
+        height: '400px',
+        loader: 'pie',
+        pagination: false,
+        thumbnails: false,
+        fx: 'simpleFade',
+        time: 4000,
+    });
 
 
 });
