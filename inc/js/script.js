@@ -58,15 +58,4 @@ jQuery(document).ready(function($) {
     });
 
     $('.menu-toggle').html('<i class="fa fa-bars fa-lg"></i>');
-
-    jQuery('#camera_wrap_1').camera({
-        height: '400px',
-        loader: 'pie',
-        pagination: false,
-        thumbnails: false,
-        fx: 'simpleFade',
-        time: 4000,
-    });
-
-
 });

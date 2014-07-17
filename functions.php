@@ -27,7 +27,7 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '1.0.9');
+        define('SC_AVENUE_VERSION', '1.1.0');
         /**
          * Set the content width based on the theme's design and stylesheet.
          */

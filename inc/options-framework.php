@@ -87,6 +87,19 @@ if (!function_exists('of_get_option')) :
 endif;
 
 function sc_slider() { ?>
+<script>
+    jQuery(document).ready(function($){
+        jQuery('#camera_wrap_1').camera({
+            height: '400px',
+            loader: 'pie',
+            pagination: false,
+            thumbnails: false,
+            fx: 'simpleFade',
+            time: 4000,
+        });            
+    });
+
+</script>
     <div class="sc-slider-wrapper">
 	<div class="fluid_container">
         <div class="camera_wrap" id="camera_wrap_1">
