@@ -27,6 +27,12 @@ Avenue Responsive WordPress Theme
 - fix slider responsiveness
 - fix image distortion on resize
 
+* 1.1.0
+- fix JS error
+
+* 1.1.1
+- create banner widget placeholder
+
 
 - Avenue is created and designed by Bilal Hassan (http://smartcatdesign.net)
 

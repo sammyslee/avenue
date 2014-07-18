@@ -27,7 +27,7 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '1.1.0');
+        define('SC_AVENUE_VERSION', '1.1.1');
         /**
          * Set the content width based on the theme's design and stylesheet.
          */
@@ -84,6 +84,16 @@ function avenue_widgets_init() {
         'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="hidden">',
+        'after_title' => '</h2>',
+    ));
+    
+    register_sidebar(array(
+        'name' => __('Fullwidth Banner', 'avenue'),
+        'id' => 'sidebar-banner',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));    
     
@@ -240,19 +250,70 @@ function sc_avenue_css() {
     </style>
 <?php
 }
+/**
+ * Create custom widget
+ */
+// Creating the widget
+class sc_recent_posts_widget extends WP_Widget {
 
-//add_action( 'admin_head', 'spacious_favicon' );
-//add_action( 'wp_head', 'spacious_favicon' );
-///**
-// * Fav icon for the site
-// */
-//function spacious_favicon() {
-//	if ( of_get_option( 'spacious_activate_favicon', '0' ) == '1' ) {
-//		$spacious_favicon = of_get_option( 'spacious_favicon', '' );
-//		$spacious_favicon_output = '';
-//		if ( !empty( $spacious_favicon ) ) {
-//			$spacious_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $spacious_favicon ).'" type="image/x-icon" />';
-//		}
-//		echo $spacious_favicon_output;
-//	}
-//}
+    function __construct() {
+        parent::__construct(
+                'sc_recent_posts_widget', __('Avenue Recent Articles', 'sc_recent_posts_widget_domain'), array('description' => __('Use this widget to display the Our Team anywhere on the site.', 'sc_recent_posts_widget_domain'),)
+        );
+    }
+
+    // Creating widget front-end
+    // This is where the action happens
+    public function widget($args, $instance) {
+        $title = apply_filters('widget_title', $instance['title']);
+
+        // before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+        if (!empty($title))
+            echo $args['before_title'] . $title . $args['after_title'];
+
+        // This is where you run the code and display the output
+//        include 'inc/widget.php';
+        avenue_recent_posts();
+        //        echo $args['after_title'];
+    }
+
+    // Widget Backend
+    public function form($instance) {
+        if (isset($instance['title'])) {
+            $title = $instance['title'];
+        } else {
+            $title = __('Meet Our Team', 'sc_recent_posts_widget_domain');
+        }
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+        <?php
+    }
+
+    // Updating widget replacing old instances with new
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
+        return $instance;
+    }
+
+}
+
+// Class sc_recent_posts_widget ends here
+// Register and load the widget
+function sc_avenue_load_widget() {
+    register_widget('sc_recent_posts_widget');
+}
+
+add_action('widgets_init', 'sc_avenue_load_widget');
+
+function avenue_recent_posts(){
+    
+    
+    
+    
+}

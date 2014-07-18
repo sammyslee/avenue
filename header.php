@@ -30,13 +30,17 @@
                                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                                         <?php if (of_get_option('sc_logo_image') != '') { ?>
                                             <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt="" id="sc_logo"/>
-                                        <?php }else{
+                                        <?php
+                                        } else {
                                             bloginfo('name');
-                                            }
+                                        }
                                         ?>                                        
                                     </a>
                                 </h1>
-                                <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                                <?php if (of_get_option('sc_logo_image') == '') { ?>
+                                    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                                <?php } ?>
+
                             </div>
                             <div class="col-xs-6 search-bar">
                                 <!-- header right -->
