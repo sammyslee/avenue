@@ -48,6 +48,11 @@ fieldset[disabled] .btn-primary.active {
 .scroll-top:hover{
     border-color: #0FAF97;
 }
+#site-toolbar{
+    border-bottom: 2px solid #0FAF97;
+}
+
+
 @media(max-width: 600px){
     .nav-menu > li.current_page_item a{
         color: #0FAF97;

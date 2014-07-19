@@ -6,6 +6,7 @@
 jQuery(document).ready(function($) {
     //--Match CTA Boxes height
     matchColHeights('.site-cta');
+    matchColHeights('#top-banner #sc_avenue_recent_posts .col-sm-3');
 
     //--CTA boxes
     $('.site-cta').hover(function() {

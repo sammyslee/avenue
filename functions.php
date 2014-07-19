@@ -4,7 +4,6 @@
  *
  * @package avenue
  */
-
 if (!function_exists('avenue_setup')) :
 
     /**
@@ -21,7 +20,7 @@ if (!function_exists('avenue_setup')) :
          * Translations can be filed in the /languages/ directory.
          * If you're building a theme based on avenue, use a find and replace
          * to change 'avenue' to the name of your theme in all the template files
-         */    
+         */
         if (!isset($content_width)) {
             global $content_width;
             $content_width = 1060;
@@ -76,7 +75,7 @@ add_action('after_setup_theme', 'avenue_setup');
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function avenue_widgets_init() {
-    
+
     register_sidebar(array(
         'name' => __('Header Right', 'avenue'),
         'id' => 'sidebar-header-right',
@@ -86,7 +85,7 @@ function avenue_widgets_init() {
         'before_title' => '<h2 class="hidden">',
         'after_title' => '</h2>',
     ));
-    
+
     register_sidebar(array(
         'name' => __('Fullwidth Banner', 'avenue'),
         'id' => 'sidebar-banner',
@@ -95,8 +94,8 @@ function avenue_widgets_init() {
         'after_widget' => '</aside>',
         'before_title' => '<h2>',
         'after_title' => '</h2>',
-    ));    
-    
+    ));
+
     register_sidebar(array(
         'name' => __('Left Sidebar', 'avenue'),
         'id' => 'sidebar-left',
@@ -106,7 +105,7 @@ function avenue_widgets_init() {
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
     ));
-    
+
     register_sidebar(array(
         'name' => __('Right Sidebar', 'avenue'),
         'id' => 'sidebar-1',
@@ -116,7 +115,7 @@ function avenue_widgets_init() {
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
     ));
-    
+
     register_sidebar(array(
         'name' => __('Homepage Sidebar', 'avenue'),
         'id' => 'sidebar-homepage',
@@ -126,7 +125,7 @@ function avenue_widgets_init() {
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
     ));
-    
+
     register_sidebar(array(
         'name' => __('Footer', 'avenue'),
         'id' => 'sidebar-footer',
@@ -136,7 +135,6 @@ function avenue_widgets_init() {
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
     ));
-
 }
 
 add_action('widgets_init', 'avenue_widgets_init');
@@ -150,7 +148,7 @@ function avenue_scripts() {
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600)', array(), SC_AVENUE_VERSION);
-    wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color','orange') . '.css', array(), SC_AVENUE_VERSION);
+    wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color', 'orange') . '.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), SC_AVENUE_VERSION);
 
 
@@ -248,8 +246,9 @@ function sc_avenue_css() {
             -moz-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
         }
     </style>
-<?php
+    <?php
 }
+
 /**
  * Create custom widget
  */
@@ -283,7 +282,7 @@ class sc_recent_posts_widget extends WP_Widget {
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
-            $title = __('Meet Our Team', 'sc_recent_posts_widget_domain');
+            $title = __('Recent Articles', 'sc_recent_posts_widget_domain');
         }
         // Widget admin form
         ?>
@@ -311,9 +310,37 @@ function sc_avenue_load_widget() {
 
 add_action('widgets_init', 'sc_avenue_load_widget');
 
-function avenue_recent_posts(){
-    
-    
-    
-    
+function avenue_recent_posts() {
+    $args = array(
+        'numberposts' => '6'
+    );
+    ?>
+    <div id="sc_avenue_recent_posts">
+        <?php $recent_posts = wp_get_recent_posts($args);
+        foreach ($recent_posts as $post) { ?>
+            <div class="col-sm-3">
+                <div>
+                    <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post['ID'])); ?>
+                    <img src="<?php echo $url; ?> " title="<?php echo $post['post_title']; ?>"/>
+                    <div class="overlay">
+                        <a href="<?php echo get_permalink($post['ID']) ?>" class="title">
+                            <?php echo $post['post_title']; ?>
+                        </a>
+                        <?php // $date = new DateTime($post['post_date']); ?>
+                        <div class="date">
+                            <i class="fa fa-calendar"></i>
+                            <?php echo date('M d', strtotime($post['post_date'])); ?>
+                        </div>
+                        <div class="author">
+                            <i class="fa fa-pencil"></i>
+                            <?php echo get_userdata($post['post_author'])->user_login; ?>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    <?php } ?>
+        <?php // var_dump($post); ?>
+    </div>
+<?php
 }
