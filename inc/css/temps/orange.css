@@ -49,7 +49,7 @@ fieldset[disabled] .btn-primary.active {
     border-color: #ff6600;
 }
 #site-toolbar{
-    border-bottom: 2px solid #ff6600;
+    border-bottom: 1px solid #ff6600;
 }
 @media(max-width: 600px){
     .nav-menu > li.current_page_item a{
