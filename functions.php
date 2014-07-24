@@ -64,6 +64,7 @@ if (!function_exists('avenue_setup')) :
             'gallery',
             'caption',
         ));
+        add_filter('widget_text', 'do_shortcode');
     }
 
 endif; // avenue_setup
@@ -312,7 +313,8 @@ add_action('widgets_init', 'sc_avenue_load_widget');
 
 function avenue_recent_posts() {
     $args = array(
-        'numberposts' => '6'
+        'numberposts' => '6',
+        'post_status' => 'publish'
     );
     ?>
     <div id="sc_avenue_recent_posts">
