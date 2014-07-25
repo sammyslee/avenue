@@ -5,31 +5,13 @@
  * @package avenue
  */
 if (!function_exists('avenue_setup')) :
-
-    /**
-     * Sets up theme defaults and registers support for various WordPress features.
-     *
-     * Note that this function is hooked into the after_setup_theme hook, which
-     * runs before the init hook. The init hook is too late for some features, such
-     * as indicating support for post thumbnails.
-     */
     function avenue_setup() {
-
-        /*
-         * Make theme available for translation.
-         * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on avenue, use a find and replace
-         * to change 'avenue' to the name of your theme in all the template files
-         */
         if (!isset($content_width)) {
             global $content_width;
             $content_width = 1060;
         }
 
         define('SC_AVENUE_VERSION', '1.1.1');
-        /**
-         * Set the content width based on the theme's design and stylesheet.
-         */
         load_theme_textdomain('avenue', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
@@ -41,8 +23,6 @@ if (!function_exists('avenue_setup')) :
          *
          * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
          */
-        //add_theme_support( 'post-thumbnails' );
-        // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'primary' => __('Primary Menu', 'avenue'),
         ));
@@ -66,8 +46,10 @@ if (!function_exists('avenue_setup')) :
         ));
         add_filter('widget_text', 'do_shortcode');
     }
+endif; 
 
-endif; // avenue_setup
+
+// avenue_setup
 add_action('after_setup_theme', 'avenue_setup');
 
 /**
@@ -209,9 +191,7 @@ require_once dirname(__FILE__) . '/inc/options-framework.php';
  */
 add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts');
 
-function optionsframework_custom_scripts() {
-    ?>
-
+function optionsframework_custom_scripts() { ?>
     <script type="text/javascript">
         jQuery(document).ready(function() {
 
@@ -225,12 +205,10 @@ function optionsframework_custom_scripts() {
 
         });
     </script>
-
     <?php
 }
 
 add_action('wp_head', 'sc_avenue_css');
-
 function sc_avenue_css() {
     ?>
     <style type="text/css">
@@ -250,10 +228,6 @@ function sc_avenue_css() {
     <?php
 }
 
-/**
- * Create custom widget
- */
-// Creating the widget
 class sc_recent_posts_widget extends WP_Widget {
 
     function __construct() {
