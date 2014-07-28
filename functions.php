@@ -47,36 +47,11 @@ if (!function_exists('avenue_setup')) :
         add_filter('widget_text', 'do_shortcode');
     }
 endif; 
-
-
-// avenue_setup
 add_action('after_setup_theme', 'avenue_setup');
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
 require get_template_directory() . '/inc/jetpack.php';
-
 define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/');
 require_once dirname(__FILE__) . '/inc/options-framework.php';
 require_once dirname(__FILE__) . '/inc/engine/avenue.php';

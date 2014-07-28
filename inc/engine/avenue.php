@@ -1,17 +1,6 @@
 <?php
-
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-/*
- * This is an example of how to add custom scripts to the options panel.
- * This one shows/hides the an option when a checkbox is clicked.
- *
- * You can delete it if you not using that option
+ * Avenue Go
  */
 
 function avenue_scripts() {
@@ -187,6 +176,14 @@ class sc_recent_posts_widget extends WP_Widget {
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+            
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Number of posts:'); ?></label>
+            <select class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>">
+                <option value="<?php echo esc_attr($title); ?>" >4</option>
+                <option>8</option>
+                <option>12</option>
+            </select>
+             
         </p>
         <?php
     }
