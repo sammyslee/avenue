@@ -8,7 +8,11 @@ function avenue_scripts() {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), SC_AVENUE_VERSION);
-    wp_enqueue_style('avenue-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600)', array(), SC_AVENUE_VERSION);
+    if('Source Sans Pro, sans-serif' == of_get_option('sc_font_family')) 
+        wp_enqueue_style('avenue-font-sans', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), SC_AVENUE_VERSION);
+    if('Lato, sans-serif' == of_get_option('sc_font_family')) 
+        wp_enqueue_style('avenue-font-lato', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic', array(), SC_AVENUE_VERSION);
+    
     wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color', 'orange') . '.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), SC_AVENUE_VERSION);
 
@@ -59,17 +63,7 @@ function avenue_widgets_init() {
     ));
 
     register_sidebar(array(
-        'name' => __('Left Sidebar', 'avenue'),
-        'id' => 'sidebar-left',
-        'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
-    ));
-
-    register_sidebar(array(
-        'name' => __('Right Sidebar', 'avenue'),
+        'name' => __('Sidebar', 'avenue'),
         'id' => 'sidebar-1',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -161,7 +155,7 @@ class sc_recent_posts_widget extends WP_Widget {
         // This is where you run the code and display the output
 //        include 'inc/widget.php';
         avenue_recent_posts();
-        //        echo $args['after_title'];
+
     }
 
     // Widget Backend
@@ -177,12 +171,11 @@ class sc_recent_posts_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
             
-            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Number of posts:'); ?></label>
+<!--            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Number of posts:'); ?></label>
             <select class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>">
-                <option value="<?php echo esc_attr($title); ?>" >4</option>
-                <option>8</option>
-                <option>12</option>
-            </select>
+                <option value="4">4</option>
+                <option value="8">8</option>
+            </select>-->
              
         </p>
         <?php
@@ -207,7 +200,7 @@ add_action('widgets_init', 'sc_avenue_load_widget');
 
 function avenue_recent_posts() {
     $args = array(
-        'numberposts' => '6',
+        'numberposts' => '4',
         'post_status' => 'publish'
     );
     ?>

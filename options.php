@@ -104,6 +104,7 @@ function optionsframework_options() {
         'MS Serif, New York, serif' => 'MS Serif',
         'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
         'Source Sans Pro, sans-serif' => 'Source Sans Pro',
+        'Lato, sans-serif' => 'Lato',
         'Tahoma, Geneva, sans-serif' => 'Tahoma',
         'Times New Roman, Times, serif' => 'Times New Roman',
         'Trebuchet MS, sans-serif' => 'Trebuchet MS',
@@ -339,7 +340,15 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Homepage', 'options_framework_theme'),
         'type' => 'heading');
-
+    
+    $options[] = array(
+        'name' => __('Show Banner', 'options_framework_theme'),
+        'desc' => __('Toggle the banner on or off', 'options_framework_theme'),
+        'id' => 'sc_banner_bool',
+        'std' => 'yes',
+        'type' => 'radio',
+        'options' => $bool_array);
+    
     $options[] = array(
         'name' => __('Show 3 CTA Boxes', 'options_framework_theme'),
         'desc' => __('Toggle the CTAs on or off', 'options_framework_theme'),
@@ -442,34 +451,6 @@ function optionsframework_options() {
         'type' => 'text');
 
 
-    $options[] = array(
-        'name' => __('Show Banner', 'options_framework_theme'),
-        'desc' => __('Toggle the banner on or off', 'options_framework_theme'),
-        'id' => 'sc_banner_bool',
-        'std' => 'yes',
-        'type' => 'radio',
-        'options' => $bool_array);
-
-    $options[] = array(
-        'name' => __('Banner Call Out', 'options_framework_theme'),
-        'desc' => __('Call Out Text', 'options_framework_theme'),
-        'id' => 'sc_banner_text',
-        'std' => 'Banner Call Out Text',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Banner Link', 'options_framework_theme'),
-        'desc' => __('URL to link to', 'options_framework_theme'),
-        'id' => 'sc_banner_url',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Banner Button Text', 'options_framework_theme'),
-        'desc' => __('Text that shows up on the button', 'options_framework_theme'),
-        'id' => 'sc_banner_button_text',
-        'std' => 'Learn More',
-        'type' => 'text');
     /*------------------------------------------------------ Footer -----------*/
     $options[] = array(
         'name' => __('Footer', 'options_framework_theme'),

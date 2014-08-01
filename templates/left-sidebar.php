@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-
+<div class="site-content-wrapper">
 <div id="content" class="site-content">
     <?php while (have_posts()) : the_post(); ?>
         <?php // get_template_part('content', 'page'); ?>
@@ -14,12 +14,12 @@ get_header();
                     <?php the_title(); ?>
                 </div>
             </div>
-            <div class="row <?php echo of_get_option('sc_container_width'); ?>">
-                <div class=" page-content col-md-12">
-                    <div class="col-md-3">
-                        <?php get_sidebar('left'); ?>
-                    </div>
-                    <div class="col-md-9">
+            <div class="page-content row <?php echo of_get_option('sc_container_width'); ?>">
+                <div class="col-md-12">
+                    <div class="col-md-3 avenue-sidebar">
+                        <?php get_sidebar(); ?>
+                    </div>                    
+                    <div class="col-md-9 item-page">
                         <?php
                         the_content();
                         wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'avenue' ), 'after' => '</div>' ) );
@@ -30,13 +30,11 @@ get_header();
                         endif;
                         ?>
                     </div>
-
                 </div>
             </div>
             </div>
 <?php endwhile; // end of the loop.   ?>
-    
 </div>
-
-
+</div>
 <?php get_footer(); ?>
+
