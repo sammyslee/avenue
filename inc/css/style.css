@@ -355,6 +355,11 @@ h3{ font-size: 22px;line-height: 26px;}
 #top-banner .top-banner-text .overlay:hover{
     background: rgba(0,0,0,0);
 }
+/*-- site content --*/
+.site-content-wrapper{
+    background: #ECECEC;
+    
+}
 /*-- sidebar recent posts --*/
 #secondary .widget_sc_recent_posts_widget #sc_avenue_recent_posts .col-sm-3{
     width: 100%;
@@ -443,22 +448,24 @@ h3{ font-size: 22px;line-height: 26px;}
     margin-top: 20px;
 }
 .item-post{
-    margin-bottom: 15px;
-    border-bottom: 1px solid #e1e1e1;
+    margin-top: 15px;
+    box-shadow: 1px 1px 3px #CACACA;
+    -moz-box-shadow: 1px 1px 3px #CACACA;
+    -webkit-box-shadow: 1px 1px 3px #CACACA;
+    background: #ffffff;
     padding-bottom: 10px;
 }
 .item-post .post-title{
     font-size: 32px;
+    margin-top: 15px;
 }
 .item-post .post-thumb{
-    padding: 15px;
+    padding-top: 15px;
 
 }
 .item-post .post-thumb img{
     width: 100%;
     width: 100%;
-    border: 1px solid #e0e0e0;
-    padding: 5px;
 }
 .single-title{
 
@@ -468,13 +475,19 @@ h3{ font-size: 22px;line-height: 26px;}
     padding-left: 30px; 
 }
 .wp-post-image{
-    width: 200px;
+    /*width: 200px;*/
     float: left;
-    margin: 0 15px 15px 0;
-    padding: 3px;
-    border: 1px solid #e0e0e0;
+    /*margin: 0 15px 15px 0;*/
 }
 /*-- sidebar --*/
+.avenue-sidebar .widget{
+    background: #ffffff;
+    padding: 5px 15px;
+    margin: 15px 0 0 0;
+    box-shadow: 1px 1px 3px #CACACA;
+    -moz-box-shadow: 1px 1px 3px #CACACA;
+    -webkit-box-shadow: 1px 1px 3px #CACACA;    
+}
 .widget-area .search-field{
     width: 100%;
     padding-left: 5px;
@@ -482,6 +495,7 @@ h3{ font-size: 22px;line-height: 26px;}
 .widget-title{
     margin-bottom: 0;
     font-weight: 400;
+    margin-top: 5px;
 }
 .widget-area ul{
     margin: 0;
