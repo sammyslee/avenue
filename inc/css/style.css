@@ -431,6 +431,7 @@ h3{ font-size: 22px;line-height: 26px;}
 /*-- page --*/
 .page-content{
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 .page-title{
     background: #222222 url('../images/left-cross.png');
@@ -485,19 +486,23 @@ h3{ font-size: 22px;line-height: 26px;}
 .single-title > div.row{
     padding-left: 30px; 
 }
+.single .wp-post-image{
+    margin: 0 20px 20px 0;
+    max-width: 250px;
+}
 .wp-post-image{
-    /*width: 200px;*/
     float: left;
-    /*margin: 0 15px 15px 0;*/
 }
 /*-- sidebar --*/
 .avenue-sidebar .widget{
 /*    background: #ffffff;
-    padding: 5px 15px;
+    
     margin: 0 0 15px 0;
     box-shadow: 1px 1px 3px #CACACA;
     -moz-box-shadow: 1px 1px 3px #CACACA;
     -webkit-box-shadow: 1px 1px 3px #CACACA;    */
+    border-bottom: 1px solid #e9e9e9;
+    padding-bottom: 10px;
 }
 .widget-area .search-field{
     width: 100%;

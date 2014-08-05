@@ -8,7 +8,6 @@ get_header();
 ?>
 
 <div id="content" class="site-content">
-
     <?php while (have_posts()) : the_post(); ?>
         <div class="col-md-12">
             <div class="page-title single-title">
@@ -16,8 +15,8 @@ get_header();
                     <?php the_title(); ?>
                 </div>
             </div>
-            <div class="row <?php echo of_get_option('sc_container_width'); ?>">
-                <div class=" page-content col-md-12">
+            <div class="page-content row <?php echo of_get_option('sc_container_width'); ?>">
+                <div class="col-md-12">
                     <div class="col-md-9">
                         <?php
                         the_post_thumbnail('medium');
@@ -32,7 +31,7 @@ get_header();
                         endif;
                         ?>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 avenue-sidebar">
                         <?php get_sidebar(); ?>
                     </div>
                 </div>

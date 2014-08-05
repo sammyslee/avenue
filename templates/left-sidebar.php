@@ -10,7 +10,7 @@ get_header();
         <?php // get_template_part('content', 'page'); ?>
         <div class="col-md-12">
             <div class="page-title">
-                <div class="row center">
+                <div class="row text-left <?php echo of_get_option('sc_container_width'); ?>">
                     <?php the_title(); ?>
                 </div>
             </div>
