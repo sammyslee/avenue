@@ -224,6 +224,7 @@ function optionsframework_options() {
         'std' => '',
         'type' => 'text');
 
+<<<<<<< HEAD
     $options[] = array(
         'name' => __('Footer Number of Columns','options_framework_theme'),
         'desc' => __('How many columns is the footer'),
@@ -251,6 +252,8 @@ function optionsframework_options() {
         'std' => '',
         'type' => 'textarea');     
     
+=======
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     // ---------------------------------------------------------------------- Design
     $options[] = array(
         'name' => __('Design', 'options_framework_theme'),
@@ -274,8 +277,12 @@ function optionsframework_options() {
         'type' => "images",
         'options' => array(
             'orange' => $imagepath . 'orange.png',
+<<<<<<< HEAD
             'green' => $imagepath . 'green.png',
             'blue' => $imagepath . 'blue.png'),
+=======
+            'green' => $imagepath . 'green.png')
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     );
 
 
@@ -299,6 +306,7 @@ function optionsframework_options() {
 
 
     // ---------------------------------------------------------------------- Slider
+<<<<<<< HEAD
     
     $options[] = array(
         'name' => __('Single Post', 'options_framework_theme'),
@@ -368,6 +376,21 @@ function optionsframework_options() {
     
     $path = get_template_directory_uri() . '/images/avenue-background.jpg';
 
+=======
+    $path = get_template_directory_uri() . '/images/demo-slider.png';
+    $options[] = array(
+        'name' => __('Slider', 'options_framework_theme'),
+        'type' => 'heading');
+    
+//$options[] = array(
+//	"name" => "Test",
+//	"id" => "example_text",
+//	"std" => "Default Value",
+//	"type" => "text",
+//        "theme_customizer" => true,
+//        "section" => "nav");
+        
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'desc' => __('Toggle the Slider on or off', 'options_framework_theme'),
@@ -375,8 +398,18 @@ function optionsframework_options() {
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
+<<<<<<< HEAD
 
     
+=======
+    $options[] = array(
+        'name' => __('Slider Image Style', 'options_framework_theme'),
+        'desc' => __('How do you want the slider to show your images', 'options_framework_theme'),
+        'id' => 'sc_slider_style',
+        'std' => 'cover',
+        'type' => 'radio',
+        'options' => $slider_style);
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     $options[] = array(
         'name' => __('Slide #1', 'options_framework_theme'),
         'desc' => __('First Slide', 'options_framework_theme'),
@@ -414,7 +447,15 @@ function optionsframework_options() {
         'desc' => __('Third Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide3_text',
         'std' => 'Comes with 600 Icons',
+<<<<<<< HEAD
         'type' => 'text');    
+=======
+        'type' => 'text');
+    //--------------------------------------------------------------------------- Homepage
+    $options[] = array(
+        'name' => __('Homepage', 'options_framework_theme'),
+        'type' => 'heading');
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     
     $options[] = array(
         'name' => __('Show Banner', 'options_framework_theme'),
@@ -463,6 +504,7 @@ function optionsframework_options() {
         'id' => 'sc_cta1_url',
         'std' => '',
         'type' => 'text');
+<<<<<<< HEAD
 
     $options[] = array(
         'name' => __('Box #1 Button Text', 'options_framework_theme'),
@@ -470,6 +512,8 @@ function optionsframework_options() {
         'id' => 'sc_cta1_button_text',
         'std' => 'Click Here',
         'type' => 'text');
+=======
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     // box 2
     $options[] = array(
         'name' => __('Box #2 Title', 'options_framework_theme'),
@@ -500,6 +544,7 @@ function optionsframework_options() {
         'id' => 'sc_cta2_url',
         'std' => '',
         'type' => 'text');
+<<<<<<< HEAD
     
     $options[] = array(
         'name' => __('Box #2 Button Text', 'options_framework_theme'),
@@ -507,6 +552,9 @@ function optionsframework_options() {
         'id' => 'sc_cta2_button_text',
         'std' => 'Click Here',
         'type' => 'text');
+=======
+
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     //box3
     $options[] = array(
         'name' => __('Box #3 Title', 'options_framework_theme'),
@@ -537,6 +585,7 @@ function optionsframework_options() {
         'id' => 'sc_cta3_url',
         'std' => '',
         'type' => 'text');
+<<<<<<< HEAD
     
     $options[] = array(
         'name' => __('Box #3 Button Text', 'options_framework_theme'),
@@ -571,6 +620,28 @@ function optionsframework_options() {
             'on' => 'Show',
             'off' => 'Hide',
         ));    
+=======
+
+
+    /*------------------------------------------------------ Footer -----------*/
+    $options[] = array(
+        'name' => __('Footer', 'options_framework_theme'),
+        'type' => 'heading');
+    $options[] = array(
+        'name' => __('Number of Columns','options_framework_theme'),
+        'desc' => __('How many columns is the footer'),
+        'id' => 'sc_footer_columns',
+        'std' => 3,
+        'type' => 'select',
+        'options' => $footer_columns);
+    
+    $options[] = array(
+        'name' => __('Footer Text', 'options_framework_theme'),
+        'desc' => __('Enter text for the footer', 'options_framework_theme'),
+        'id' => 'sc_footer_text',
+        'std' => '&#169; 2014 Your company name',
+        'type' => 'textarea');
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     
     //-------------------- Add ons
 //    $options[] = array(
@@ -775,6 +846,7 @@ function sc_avenue_options_display_sidebar() {
     <div class="width30 left ml2p">
 
         <div class="center">
+<<<<<<< HEAD
             <img class="smartcat-icon" src="<?php echo get_template_directory_uri() ; ?>/inc/images/smartcat.png"/>
         </div>
 
@@ -804,6 +876,35 @@ function sc_avenue_options_display_sidebar() {
             </a>
         </div>
 
+=======
+            <img class="smartcat-icon" src="<?php echo OPTIONS_FRAMEWORK_DIRECTORY; ?>images/smartcat_wordpress.png"/>
+        </div>
+
+        <div class="sc-tab-option">
+            <a href="http://smartcatdesign.net/avenue/" target="_blank">
+                Instructions
+            </a>
+        </div>
+
+        <div class="sc-tab-option">
+            <a href="http://smartcatdesign.net/avenue/" target="_blank">
+                Support
+            </a>
+        </div>    
+
+        <div class="sc-tab-option">
+            <a href="http://smartcatdesign.net/avenue/" target="_blank">
+                View Avenue Icons
+            </a>
+        </div>           
+        <p>Donations are extremely important. It takes a lot of time to create, modify and support a theme. As well as answer all your questions.</p>
+        <p>Please make a donation so I can afford to keep this theme 100% free</p>
+        <div class="sc-tab-option">
+            <a href="http://smartcatdesign.net/donate/" target="_blank">
+                Donate
+            </a>
+        </div>  
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
         <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
     </div>
 <?php } ?>

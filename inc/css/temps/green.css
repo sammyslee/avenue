@@ -49,7 +49,11 @@ fieldset[disabled] .btn-primary.active {
     border-color: #0FAF97;
 }
 #site-toolbar{
+<<<<<<< HEAD
     border-bottom: 4px solid #0FAF97;
+=======
+    border-bottom: 1px solid #0FAF97;
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
 }
 
 
@@ -59,7 +63,10 @@ fieldset[disabled] .btn-primary.active {
     }      
 }
 
+<<<<<<< HEAD
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a{
     color: rgb(15, 175, 151);
 }
+=======
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8

@@ -33,12 +33,15 @@ Avenue Responsive WordPress Theme
 * 1.1.1
 - create banner widget placeholder
 
+<<<<<<< HEAD
 * 1.1.2
 - HTML/CSS fixes and cleanup
 - Added template options
 - Added new color option(blue)
 
 
+=======
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
 
 - Avenue is created and designed by Bilal Hassan (http://smartcatdesign.net)
 

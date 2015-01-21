@@ -16,6 +16,7 @@ get_header();
                 </div>
             </div>
             <div class="page-content row <?php echo of_get_option('sc_container_width'); ?>">
+<<<<<<< HEAD
                 <div class="col-md-9 item-page <?php echo of_get_option('sc_single_layout'); ?>">
                     <?php
                     'on' == of_get_option('sc_single_featured', 'on') ? the_post_thumbnail('medium') : '';
@@ -37,9 +38,35 @@ get_header();
                     <?php get_sidebar(); ?>
                 </div>
                 <?php endif; ?>
+=======
+                <div class="col-md-12">
+                    <div class="col-md-9">
+                        <?php
+                        the_post_thumbnail('medium');
+                        the_content();
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'avenue' ),
+				'after'  => '</div>',
+			) );                        
+                        // If comments are open or we have at least one comment, load up the comment template
+                        if (comments_open() || '0' != get_comments_number()) :
+                            comments_template();
+                        endif;
+                        ?>
+                    </div>
+                    <div class="col-md-3 avenue-sidebar">
+                        <?php get_sidebar(); ?>
+                    </div>
+                </div>
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
             </div>
         </div>
     <?php endwhile; // end of the loop. ?>
 
 </div><!-- #primary -->
+<<<<<<< HEAD
+=======
+
+<?php get_sidebar(); ?>
+>>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
 <?php get_footer(); ?>
