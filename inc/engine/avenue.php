@@ -68,23 +68,8 @@ function avenue_widgets_init() {
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-<<<<<<< HEAD
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
-=======
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
-    ));
-
-    register_sidebar(array(
-        'name' => __('Homepage Sidebar', 'avenue'),
-        'id' => 'sidebar-homepage',
-        'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     ));
 
     register_sidebar(array(
@@ -93,13 +78,8 @@ function avenue_widgets_init() {
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
         'after_widget' => '</aside>',
-<<<<<<< HEAD
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
-=======
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
     ));
 }
 add_action('widgets_init', 'avenue_widgets_init');
@@ -124,7 +104,6 @@ function optionsframework_custom_scripts() { ?>
     <?php
 }
 
-<<<<<<< HEAD
 
 function sc_smartcat_add_favicon(){
     if( of_get_option( 'sc_favicon' ) ) :
@@ -141,8 +120,6 @@ function sc_smartcat_add_custom_code(){
 add_action('wp_head', 'sc_smartcat_add_custom_code');
 
 
-=======
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
 add_action('wp_head', 'sc_avenue_css');
 function sc_avenue_css() {
     ?>
@@ -151,12 +128,6 @@ function sc_avenue_css() {
             font-size: <?php echo of_get_option('sc_font_size'); ?>;
             font-family: <?php echo of_get_option('sc_font_family'); ?>;
         }
-<<<<<<< HEAD
-=======
-        .row{
-            /*width: <?php echo of_get_option('sc_container_width'); ?>;*/
-        }
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
         .sc-slider ul li{
             background-size: <?php echo of_get_option('sc_slider_style'); ?>;
             -webkit-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
@@ -170,11 +141,7 @@ class sc_recent_posts_widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
-<<<<<<< HEAD
                 'sc_recent_posts_widget', __('Avenue Recent Articles', 'sc_recent_posts_widget_domain'), array('description' => __('Use this widget to display the Avenue Recent Posts.', 'sc_recent_posts_widget_domain'),)
-=======
-                'sc_recent_posts_widget', __('Avenue Recent Articles', 'sc_recent_posts_widget_domain'), array('description' => __('Use this widget to display the Our Team anywhere on the site.', 'sc_recent_posts_widget_domain'),)
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
         );
     }
 
@@ -324,11 +291,7 @@ function sc_ctas() {
                             <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
-<<<<<<< HEAD
                             <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta1_button_text', 'Click Here');  ?></a>
-=======
-                            <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary">Click Here</a>
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
                         </p>                                
                     </div>                            
                 </div>
@@ -344,11 +307,7 @@ function sc_ctas() {
                             <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
-<<<<<<< HEAD
                             <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta2_button_text', 'Click Here');  ?></a>
-=======
-                            <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary">Click Here</a>
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
                         </p>                                
                     </div>                            
                 </div>
@@ -364,11 +323,7 @@ function sc_ctas() {
                             <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
                         </p>
                         <p class="text-right">
-<<<<<<< HEAD
                             <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta3_button_text', 'Click Here');  ?></a>
-=======
-                            <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary">Click Here</a>
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
                         </p>
                     </div>                            
                 </div>
@@ -462,12 +417,8 @@ function sc_footer() {
     echo of_get_option('sc_footer_text');?>
     <br>
     <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
-<<<<<<< HEAD
     <a href="http://smartcatdesign.net/" rel="designer">
         <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'; ?>" width="20px"/>
         Design by SmartCat
     </a>
-=======
-    <a href="http://smartcatdesign.net/" rel="designer">Design by SmartCat</a>
->>>>>>> 4ca6086ee6386f8a4e7674a64b2b2dac871d17d8
 <?php }
